@@ -28,7 +28,6 @@ def test_ilen(value: Iterable, expected: int) -> None:
 
 def flatten(iterable: Iterable):
     for obj in iterable:
-        # если подобъект итерируемый и не строка - рекурсировать, иначе вернуть его
         if isinstance(obj, Iterable) and not isinstance(obj, str):
             for subiterable in flatten(obj):
                 yield subiterable
