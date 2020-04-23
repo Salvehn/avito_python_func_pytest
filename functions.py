@@ -111,12 +111,13 @@ def test_groupby_gender() -> None:
 
 
 ##test failed - result = [(0, 1, 2), (3, 4)] instead of [(0, 1, 2), (3, 4, )]
-def chunks_v01(size: int, iterable: Iterable):
-    """
-    >>> list(chunks(3, [0, 1, 2, 3, 4]))
-    [(0, 1, 2), (3, 4, )]
-    """
-    return [tuple(iterable[i:i+size]) for i in range(0, len(iterable), size)]
+
+# def chunks_v01(size: int, iterable: Iterable):
+#     """
+#     >>> list(chunks(3, [0, 1, 2, 3, 4]))
+#     [(0, 1, 2), (3, 4, )]
+#     """
+#     return [tuple(iterable[i:i+size]) for i in range(0, len(iterable), size)]
 
 
 def chunks(size: int, iterable: Iterable):
@@ -183,19 +184,21 @@ def test_first_complete() -> None:
     first(temp)
     assert first(temp) is None
 
+
 #test failed result - range(5) on 4th iter assert 4 == None, expected None
-def last_v01(iterable: Iterable):
-    """
-    >>> foo = (x for x in range(10))
-    >>> last(foo)
-    9
-    >>> last(range(0))
-    None
-    """
-    item = None
-    for item in iterable:
-        pass
-    return item
+# def last_v01(iterable: Iterable):
+#     """
+#     >>> foo = (x for x in range(10))
+#     >>> last(foo)
+#     9
+#     >>> last(range(0))
+#     None
+#     """
+#     item = None
+#     for item in iterable:
+#         pass
+#     return item
+
 
 def last(iterable: Iterable):
         try:
